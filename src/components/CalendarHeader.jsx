@@ -2,6 +2,8 @@ import React from 'react';
 import { format } from 'date-fns';
 
 const CalendarHeader = ({ currentMonth, onNextMonth, onPrevMonth, addResource }) => {
+
+  //header to change months and add resources 
   return (
     <div className="flex items-center justify-between p-4 bg-gray-100 border-b">
       <button onClick={onPrevMonth} className="bg-blue-500 text-white px-2 py-1 rounded">

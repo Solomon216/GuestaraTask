@@ -1,4 +1,6 @@
 export const stringToColor = (string) => {
+  //function to generate color for events
+  
   let hash = 0;
   for (let i = 0; i < string.length; i++) {
     hash = string.charCodeAt(i) + ((hash << 5) - hash);

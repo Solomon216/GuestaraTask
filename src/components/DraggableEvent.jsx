@@ -3,6 +3,7 @@ import { useDrag } from 'react-dnd';
 import { format } from 'date-fns';
 
 const DraggableEvent = ({ event, onDelete }) => {
+  //function to drag event and add it accordingly
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'event',
     item: { id: event.id },

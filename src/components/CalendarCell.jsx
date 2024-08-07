@@ -4,8 +4,11 @@ import DraggableEvent from './DraggableEvent';
 import { useDrop } from 'react-dnd';
 
 const CalendarCell = ({ day, resource, events, onDateClick, moveEvent, deleteEvent, onMouseDown, onMouseEnter, onMouseUp, isHighlighted }) => {
+  //filtering events
   const dayEvents = events.filter(event => isWithinInterval(day, { start: event.start, end: event.end }) && event.resource === resource);
   const isDisabled = !isSameMonth(day, new Date());
+
+  //Initialising drag and drop
 
   const [{ isOver }, drop] = useDrop({
     accept: 'event',

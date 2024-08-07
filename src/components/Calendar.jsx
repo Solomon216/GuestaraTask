@@ -27,6 +27,8 @@ const Calendar = () => {
   const [dragEnd, setDragEnd] = useState(null);
   const [activeResource, setActiveResource] = useState(null);
 
+  //Start and end dates setup
+
   const monthStart = startOfMonth(currentMonth);
   const monthEnd = endOfMonth(currentMonth);
   const startDate = startOfWeek(monthStart);
@@ -38,6 +40,8 @@ const Calendar = () => {
     days.push(day);
     day = addDays(day, 1);
   }
+
+  //Evnets and resources add and delete
 
   const addEvent = (start, end, resource) => {
     const title = prompt('Enter event title:');
@@ -76,6 +80,8 @@ const Calendar = () => {
     }
   };
 
+  //Hnadling dragging operations
+
   const handleMouseDown = (date, resourceId) => {
     setDragging(true);
     setDragStart(date);
@@ -98,6 +104,8 @@ const Calendar = () => {
     setDragEnd(null);
     setActiveResource(null);
   };
+
+  //Higlighitng slected cells
 
   const getHighlighted = (date, resource) => {
     if (dragStart && dragEnd && activeResource === resource) {
